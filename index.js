@@ -1,39 +1,36 @@
 // Завдання 1
 
-for (let i = 1; i < 6; i++) {
-    if ((i === 1) || (i % 2) !== 0) {
-        console.log('Buzz')
-    } 
-    else if ((i % 3) === 0 || (i % 2) === 0) {
-        console.log('FizzBuzz');
-    }
-    else if ((i % 3) !== 0 ) {
-        console.log('Fizz');
-    }
-    else (i) 
-        console.log('Fizz');
-    }  
+for (let i = 1; i <= 10; i++) {
+   if (i % 3 === 0) {
+    console.log('FizzBuzz')
+} else if (i % 2 !== 0) {
+    console.log('Buzz');
+} else if (i % 2  === 0) {
+    console.log('Fizz')
+}
+}
 
-    // Працює, але наполовину :)
 
-    // Завдання 2
+// Завдання 2
 
-    let fact = 7;
-    let result = 1;
-    for (let i = 1; i<= fact; i++) {
-        result *= i;
-    }
-    console.log(result) 
+let i = 1;
 
-    // Завдання 3 
+for (let b = 2; b <= 7; b++) {
+    i *= b;  
+}
 
-    const sheetsInReamPaper = 500;
-    const consumptionPerWeek = 1200;
-    const weeksAmount = 8;
+alert(`7! = ${i}`)
 
-   let minConsumptionPerWeek = i = consumptionPerWeek * weeksAmount/sheetsInReamPaper;
 
-   console.log(minConsumptionPerWeek);
+// Завдання 3 
 
-//   Можливо, якщо в моєму місті світло буде з'являтися побільше ніж 4-6 годин на добу, 
-//   то буду розуміти ці штуки краще, а поки соромно ))
+const sheetsInReamPaper = 500;
+const consumptionPerWeek = 1200;
+const weeksAmount = 8;
+
+let amountSheets = consumptionPerWeek * weeksAmount // розхід листів за 8 тижнів
+
+if ((amountSheets) % sheetsInReamPaper === 0)       // Якщо остача від ділення загальної кількості листів за 8 тижнів === 0
+    console.log(amountSheets / sheetsInReamPaper);  // 19.2 ---> false (остача від ділення 100 листів = 0.2 пачки; тому мінімальна потреба 19 + 1 пачка)
+else { console.log((amountSheets  - ((amountSheets) % sheetsInReamPaper)) / sheetsInReamPaper + 1) } 
+                  //  (9600 листів  -   залишок 100  листів)             / к-ть листів в пачці  + 1 пачка  
